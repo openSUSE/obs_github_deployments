@@ -1,13 +1,37 @@
 version: 2.1
+
+aliases:
+  - &install_dependencies
+    name: install dependecies
+    command: |
+      gem install bundler -v 2.2.11
+      bundle install
+
 jobs:
-  build:
+  lint:
     docker:
       - image: ruby:2.7.0
     steps:
       - checkout
+      - run: *install_dependencies
       - run:
-          name: Run the default task
-          command: |
-            gem install bundler -v 2.2.11
-            bundle install
-            bundle exec rake
+          name: Run rubocop
+          command: bundle exec rubocop --fail-fast .
+  rspec:
+    docker:
+      - image: ruby:2.7.0
+    steps:
+      - checkout
+      - run: *install_dependencies
+      - run:
+          name: Run rspec tests
+          command: bundle exec rspec spec/
+
+workflows:
+  version: 2
+  test_all:
+    jobs:
+      - lint
+      - rspec:
+          requires:
+            - lint
