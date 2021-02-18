@@ -2,9 +2,13 @@
 
 [![openSUSE](https://circleci.com/gh/openSUSE/obs_github_deployments.svg?style=svg)](https://app.circleci.com/pipelines/github/openSUSE/obs_github_deployments)
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/obs_github_deployments`. To experiment with that code, run `bin/console` for an interactive prompt.
+CLI tool and wrapper to interact with GitHub deployments, used by the Ansible setup for the deployments of the [Open Build Service](https://openbuildservice.org) reference instance.
 
-TODO: Delete this and the text above, and describe your gem
+With ObsGithubDeploymnets you can:
+- Get information about the last deployments (history).
+- Get the status of the last deployment.
+- Lock a deployment.
+- Unlock a deployment.
 
 ## Installation
 
@@ -24,7 +28,13 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+From development environment:
+
+To know the version of this gem:
+
+```
+ruby obs_github_deployments -v
+```
 
 ## Development
 
@@ -34,4 +44,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/obs_github_deployments.
+Bug reports and pull requests are welcome on GitHub at https://github.com/openSUSE/obs_github_deployments.
