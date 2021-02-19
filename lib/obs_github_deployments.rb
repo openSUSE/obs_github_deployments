@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "obs_github_deployments/version"
+require "zeitwerk"
+loader = Zeitwerk::Loader.for_gem
+loader.setup
 
 module ObsGithubDeployments
   class Error < StandardError; end
