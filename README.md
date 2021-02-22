@@ -28,6 +28,17 @@ Or install it yourself as:
 
 ## Usage
 
+Require the gem whenever you need it:
+
+```ruby
+    require 'obs_github_deployments'
+```
+
+Set the environment variables needed to make GitHub API calls and access the repository where you are going to track the deployments. Do so in the `.env` file taking `.env.sample` as example.
+
+You can obtain the token in GitHub: `Settings > Developer Settings > Personal access tokens`.
+It is enough to enable `repo:status` and `repo_deployment` scopes.
+
 From development environment:
 
 To know the version of this gem:
