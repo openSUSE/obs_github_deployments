@@ -57,6 +57,44 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 Run `make docker-dev` and you'll be dropped inside a shell with all needed dependencies to build and hack the gem.
 
+## Testing
+
+We are using `Rspec` in combination with the `VCR` gem to test our code. The `VCR` gem will mock the GitHub API responses, in order
+to have consistent, fast and stable test results.
+First time you run spec's that require a "real" API response from GitHub, VCR will record the response and create
+a cassette (a `.yml` file with the response content) in the `spec/cassettes` folder, which is going to mock
+the API in future runs of the test. Therefore you need to work with real credentials and GitHub API communication
+on the initial test execution.
+
+**Important:** Since we are working with real credentials and auth tokens, we need to filter them out of the cassettes
+before commiting anything to a public repository. You can do so, by using the `filter_sensitive_data` option
+which replaces the real value with a given string when the cassette is recorded. This is set in the `VCR`
+configuration in the `spec/test_helper.rb` file. Please double check the cassettes for any sensible data before commiting them!
+
+### Recording the cassettes:
+
+The `test_helper.rb` file contains the configuration of `VCR` and some helper methods to
+use your credentials for the GitHub API by loading them from enviroment variables.
+
+1. Rename the `.env.test.example` to `.env.test` and fill the enviroment variables
+in the file accordingly.
+2. Load the enviroment variables by sourcing the the env file `source .env.test`
+
+To use `VCR` in your tests, simply require the `test_helper.rb` file in your specs. There are
+different ways to enable mocking through the VCR cassettes in your tests, one of them is just
+to enable it in the `describe` block:
+
+Example:
+```
+RSpec.describe ObsGithubDeployments::Deployment, :vcr do
+end
+```
+
+First time you run your test case, it will do a real API call and record the response. Incase
+your test case/code changed, you might need to re-record them. Simply delete the corresponding cassette
+and `VCR` will record a new one for you on the next execution of the test case.
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/openSUSE/obs_github_deployments.
