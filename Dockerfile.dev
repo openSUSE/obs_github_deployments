@@ -1,0 +1,10 @@
+FROM ruby:2.7
+
+WORKDIR /obs_github_deployments
+COPY . /obs_github_deployments
+
+RUN bundle install
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
