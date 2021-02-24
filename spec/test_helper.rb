@@ -18,3 +18,7 @@ end
 def gh_test_repository
   ENV.fetch("GITHUB_TEST_REPOSITORY", "krauselukas/test_github_deployments")
 end
+
+def gh_test_branch
+  ENV.fetch("GITHUB_TEST_BRANCH", "main")
+end
