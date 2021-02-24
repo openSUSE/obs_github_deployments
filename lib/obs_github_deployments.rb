@@ -6,6 +6,7 @@ loader.inflector.inflect("cli" => "CLI")
 loader.setup
 
 require "octokit"
+require "active_support/core_ext/object/blank"
 
 module ObsGithubDeployments
   class Error < StandardError; end
