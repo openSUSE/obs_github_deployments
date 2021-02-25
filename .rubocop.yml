@@ -5,6 +5,8 @@ AllCops:
 Metrics/BlockLength:
   Exclude:
     - 'tasks/*'
+    - 'spec/**/*'
+    - 'obs_github_deployments.gemspec'
 
 Style/Documentation:
   Enabled: false
