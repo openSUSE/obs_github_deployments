@@ -34,6 +34,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 1.7"
   spec.add_dependency "dry-cli", "~> 0.6"
+  spec.add_dependency "octokit", "~> 4.20"
   spec.add_dependency "zeitwerk", "~> 2.4"
 
   # For more information and examples about making a new gem, checkout our
