@@ -1,0 +1,305 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 24 Feb 2021 15:28:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"704d063aa18c8575f3228fa124d2fe3023ffb5440d699db9882043081666224f"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4977'
+      X-Ratelimit-Reset:
+      - '1614182413'
+      X-Ratelimit-Used:
+      - '23'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - DB8E:ADCF:5F4806:6A7914:603670A1
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616","id":328851616,"node_id":"MDEwOkRlcGxveW1lbnQzMjg4NTE2MTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-24T15:21:40Z","updated_at":"2021-02-24T15:25:00Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null}]'
+  recorded_at: Wed, 24 Feb 2021 15:28:52 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 24 Feb 2021 15:28:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"704d063aa18c8575f3228fa124d2fe3023ffb5440d699db9882043081666224f"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4976'
+      X-Ratelimit-Reset:
+      - '1614182413'
+      X-Ratelimit-Used:
+      - '24'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - DB90:8350:1ED409:22BAE6:603670A1
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616","id":328851616,"node_id":"MDEwOkRlcGxveW1lbnQzMjg4NTE2MTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-24T15:21:40Z","updated_at":"2021-02-24T15:25:00Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null}]'
+  recorded_at: Wed, 24 Feb 2021 15:28:53 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 24 Feb 2021 15:28:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"b7c975d99fe0c8550b4d620195859c2a5f0589c08e7034f071525cb2439005a5"
+      Last-Modified:
+      - Wed, 24 Feb 2021 15:25:00 GMT
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4975'
+      X-Ratelimit-Reset:
+      - '1614182413'
+      X-Ratelimit-Used:
+      - '25'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - DB92:1070F:612ED7:6C7659:603670A2
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616","id":328851616,"node_id":"MDEwOkRlcGxveW1lbnQzMjg4NTE2MTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-24T15:21:40Z","updated_at":"2021-02-24T15:25:00Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null}'
+  recorded_at: Wed, 24 Feb 2021 15:28:53 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Wed, 24 Feb 2021 15:28:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"56578d993f8ecc60df24f892aa7ab7ce3460a3ed150702b5619b2fc3f1a01673"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4974'
+      X-Ratelimit-Reset:
+      - '1614182413'
+      X-Ratelimit-Used:
+      - '26'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - EE26:8352:585BC7:63931B:603670A2
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses/486097126","id":486097126,"node_id":"MDE2OkRlcGxveW1lbnRTdGF0dXM0ODYwOTcxMjY=","state":"queued","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"description":"","environment":"production","target_url":"","created_at":"2021-02-24T15:25:00Z","updated_at":"2021-02-24T15:25:00Z","deployment_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","performed_via_github_app":null}]'
+  recorded_at: Wed, 24 Feb 2021 15:28:53 GMT
+recorded_with: VCR 6.0.0

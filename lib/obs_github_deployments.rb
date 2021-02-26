@@ -5,7 +5,8 @@ loader = Zeitwerk::Loader.for_gem
 loader.inflector.inflect("cli" => "CLI")
 loader.setup
 
+require "octokit"
+
 module ObsGithubDeployments
   class Error < StandardError; end
-  # Your code goes here...
 end
