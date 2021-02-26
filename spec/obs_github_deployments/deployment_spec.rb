@@ -65,4 +65,41 @@ RSpec.describe ObsGithubDeployments::Deployment, :vcr do
       end
     end
   end
+
+  describe "unlock" do
+    context "with an deployment not in the locked state" do
+      before do
+        subject.send :create_and_set_state, state: "success", payload: nil
+      end
+
+      it "throws an exception" do
+        expect { subject.unlock }.to raise_error(
+          ObsGithubDeployments::Deployment::NothingToUnlockError
+        )
+      end
+    end
+
+    context "with an deployment without any state set" do
+      before do
+        subject.send :create, payload: nil
+      end
+
+      it "throws an exception" do
+        expect { subject.unlock }.to raise_error(
+          ObsGithubDeployments::Deployment::NothingToUnlockError
+        )
+      end
+    end
+
+    context "with a locked deployment in place" do
+      before do
+        subject.send :create_and_set_state, state: "queued", payload: nil
+      end
+
+      it "unlocks the deployment and returns true" do
+        expect(subject.unlock).to eq(true)
+        expect(subject.send(:latest_status).state).to eq("inactive")
+      end
+    end
+  end
 end

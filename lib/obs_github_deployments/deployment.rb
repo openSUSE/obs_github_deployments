@@ -37,6 +37,17 @@ module ObsGithubDeployments
       true if create_and_set_state(state: "queued", payload: payload_reason(reason: reason))
     end
 
+    def unlock
+      deployment_status = latest_status
+
+      if deployment_status.blank? || deployment_status.state != "queued"
+        raise ObsGithubDeployments::Deployment::NothingToUnlockError
+      end
+
+      add_state(deployment: latest, state: "inactive")
+      true
+    end
+
     private
 
     def all
@@ -59,7 +70,10 @@ module ObsGithubDeployments
     end
 
     def add_state(deployment:, state:)
-      @client.create_deployment_status(deployment.url, state, { accept: "application/vnd.github.flash-preview+json" })
+      options = { accept: "application/vnd.github.flash-preview+json" }
+      options[:accept] = "application/vnd.github.ant-man-preview+json" if state == "inactive"
+
+      @client.create_deployment_status(deployment.url, state, options)
     end
 
     def create_and_set_state(state:, payload:)
