@@ -6,6 +6,7 @@ module ObsGithubDeployments
       extend Dry::CLI::Registry
       # register the commands and its command line
       register "version", Version, aliases: ["v", "-v", "--version"]
+      register "check-locked-deployments", CheckLockedDeployments, aliases: ["--check-locked-deployments"]
     end
   end
 end
