@@ -8,6 +8,9 @@ RSpec::Core::RakeTask.new(:spec)
 require "rubocop/rake_task"
 Dir["tasks/*.rake"].each { |t| load t }
 
-RuboCop::RakeTask.new
+RuboCop::RakeTask.new do |task|
+  task.requires << "rubocop-rake"
+  task.requires << "rubocop-rspec"
+end
 
 task default: %i[spec rubocop]
