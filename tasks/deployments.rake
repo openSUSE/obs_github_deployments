@@ -6,6 +6,7 @@ DEFAULT_STATE = "pending"
 DEFAULT_BRANCH = "main"
 
 namespace :deployments do
+  desc "Set initial configuration"
   task :config do
     @repo_name = ENV["GITHUB_TEST_REPOSITORY"]
     @access_token = ENV["GITHUB_TEST_TOKEN"]
