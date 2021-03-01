@@ -28,7 +28,6 @@ module ObsGithubDeployments
                  ObsGithubDeployments::Deployment::NoReasonGivenError => e
             abort(e.message)
           end
-          exit(0)
         end
       end
     end
