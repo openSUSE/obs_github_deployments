@@ -8,6 +8,7 @@ module ObsGithubDeployments
       register "check-lock", CheckLock, aliases: ["c", "-c"]
       register "version", Version, aliases: ["v", "-v", "--version"]
       register "lock", Lock, aliases: ["l", "-l", "--lock"]
+      register "unlock", Unlock, aliases: ["u", "-u", "--unlock"]
     end
   end
 end
