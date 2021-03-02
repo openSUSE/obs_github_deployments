@@ -7,7 +7,7 @@ module ObsGithubDeployments
       # register the commands and its command line
       register "check-lock", CheckLock, aliases: ["c", "-c"]
       register "version", Version, aliases: ["v", "-v", "--version"]
-      register "set-lock", SetLock, aliases: ["s", "-s", "--set-lock"]
+      register "lock", Lock, aliases: ["l", "-l", "--lock"]
     end
   end
 end
