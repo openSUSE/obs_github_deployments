@@ -34,17 +34,31 @@ Require the gem whenever you need it:
     require 'obs_github_deployments'
 ```
 
-Set the environment variables needed to make GitHub API calls and access the repository where you are going to track the deployments. Do so in the `.env` file taking `.env.sample` as example.
-
-You can obtain the token in GitHub: `Settings > Developer Settings > Personal access tokens`.
+Most of the commands require the credentials to access the GitHub repository where you are going to track the deployments. You can obtain the token in GitHub: `Settings > Developer Settings > Personal access tokens`.
 It is enough to enable `repo:status` and `repo_deployment` scopes.
 
-From development environment:
+You can pass them using the corresponding flags as we do in this example:
+
+```
+obs_github_deployments unlock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
+```
+
+But you could also set them as environment variables in the `.env` file taking `.env.example` as example. Doing so you don't need to specify them in the command:
+
+```
+obs_github_deployments unlock
+```
 
 To know the version of this gem:
 
 ```
-ruby obs_github_deployments -v
+obs_github_deployments -v
+```
+
+You can unlock a locked deployment at any time with:
+
+```
+obs_github_deployments unlock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
 ```
 
 ## Development
