@@ -5,5 +5,10 @@ $LOAD_PATH.unshift File.join(File.dirname(__FILE__), "..", "lib")
 
 require "obs_github_deployments"
 require "dry/cli"
+require "json"
 
-Dry::CLI.new(ObsGithubDeployments::CLI::Commands).call
+begin
+  Dry::CLI.new(ObsGithubDeployments::CLI::Commands).call
+rescue StandardError => e
+  abort({ status: "error", reason: e.message }.to_json)
+end
