@@ -17,15 +17,29 @@ module ObsGithubDeployments
           raise_error("You need to provide a repository name") unless options[:repository]
           raise_error("You need to provide a token in order to authenticate") unless options[:token]
 
-          response = client(repository: options[:repository], token: options[:token]).locked?
+          response = locked?(repository: options[:repository], token: options[:token])
           puts status_response(status: response ? "locked" : "unlocked")
         end
 
         private
 
-        def client(repository:, token:)
-          ObsGithubDeployments::Deployment.new(repository: repository,
-                                               access_token: token)
+        def locked?(repository:, token: )
+          repository_owner, repository_name = repository.split('/')
+
+          result = ObsGithubDeployments::API.Client.query(
+            ObsGithubDeployments::API::Queries::LastDeploymentState,
+            variables: { repository_owner: repository_owner, repository_name: repository_name },
+            context: { access_token: token }
+          )
+
+          if result.errors.any?
+            # TODO: Decide how we proceed with errors. Would "exit(1)" be enough?
+            return 'ERROR'
+          end
+
+          # The safe navigation operator is needed for state since it's possible that there are no deployments for the repository
+          state = result.data.repository.deployments.nodes.first.&state
+          state == "queued"
         end
       end
     end

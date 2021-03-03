@@ -10,15 +10,6 @@ module ObsGithubDeployments
       @ref = ref
     end
 
-    def locked?
-      # Nothing stops us to deploy for the first time, so not having deployments means unlocked.
-      local_status = latest_status
-      return false unless local_status
-
-      local_status.state == "queued"
-      # TODO: handle the possible exceptions properly
-    end
-
     def lock(reason:)
       raise ObsGithubDeployments::Deployment::NoReasonGivenError if reason.blank?
 
