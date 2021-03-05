@@ -9,13 +9,15 @@ RSpec.describe ObsGithubDeployments::Deployment, :vcr do
                         ref: gh_test_branch)
   end
 
-  describe "locked?" do
-    it "returns true when deployment is locked" do
-      expect(deployment.locked?).to eq(true)
+  describe "status" do
+    context "when the deployment is locked" do
+      it { expect(deployment.status).to be_locked }
+      it { expect(deployment.status.reason).to eql "friday" }
     end
 
-    it "returns false when deployment is not locked" do
-      expect(deployment.locked?).to eq(false)
+    context "when the deployment is not locked" do
+      it { expect(deployment.status).not_to be_locked }
+      it { expect(deployment.status.reason).to eql "" }
     end
   end
 
