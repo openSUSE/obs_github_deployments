@@ -17,8 +17,10 @@ module ObsGithubDeployments
           raise_error("You need to provide a repository name") unless options[:repository]
           raise_error("You need to provide a token in order to authenticate") unless options[:token]
 
-          response = client(repository: options[:repository], token: options[:token]).locked?
-          puts status_response(status: response ? "locked" : "unlocked")
+          locked = client(repository: options[:repository], token: options[:token]).locked?
+          puts status_response(status: locked ? "locked" : "unlocked")
+
+          exit 1 if locked
         end
 
         private
