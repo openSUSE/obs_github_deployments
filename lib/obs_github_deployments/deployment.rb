@@ -21,11 +21,12 @@ module ObsGithubDeployments
 
     def lock(reason:)
       raise ObsGithubDeployments::Deployment::NoReasonGivenError if reason.blank?
+      raise ObsGithubDeployments::Deployment::ReasonTooLong if reason.length > 140
 
       deployment = latest
 
       if deployment.blank?
-        create_and_set_state(state: "queued", payload: payload_reason(reason: reason))
+        create_and_set_state(state: "queued", reason: reason)
         return true
       end
 
@@ -34,7 +35,7 @@ module ObsGithubDeployments
       raise ObsGithubDeployments::Deployment::PendingError if deployment_status.blank?
       raise ObsGithubDeployments::Deployment::AlreadyLockedError if deployment_status.state == "queued"
 
-      true if create_and_set_state(state: "queued", payload: payload_reason(reason: reason))
+      true if create_and_set_state(state: "queued", reason: reason)
     end
 
     def unlock
@@ -62,27 +63,23 @@ module ObsGithubDeployments
       client.deployment_statuses(latest.url).first if latest
     end
 
-    def create(payload:)
+    def create
       options = { auto_merge: false }
-      options[:payload] = payload if payload
 
       @client.create_deployment(@repository, @ref, options)
     end
 
-    def add_state(deployment:, state:)
+    def add_state(deployment:, state:, description: nil)
       options = { accept: "application/vnd.github.flash-preview+json" }
       options[:accept] = "application/vnd.github.ant-man-preview+json" if state == "inactive"
+      options[:description] = description if description.present?
 
       @client.create_deployment_status(deployment.url, state, options)
     end
 
-    def create_and_set_state(state:, payload:)
-      deployment = create(payload: payload)
-      add_state(deployment: deployment, state: state)
-    end
-
-    def payload_reason(reason:)
-      "{\"reason\": \"#{reason}\"}"
+    def create_and_set_state(state:, reason:)
+      deployment = create
+      add_state(deployment: deployment, state: state, description: reason)
     end
   end
 end

@@ -5,8 +5,8 @@ module ObsGithubDeployments
     attr_reader :reason
 
     def initialize(status)
-      @state = status.state
-      @reason = status.reason
+      @state = status["state"]
+      @reason = status["description"]
     end
 
     def locked?
