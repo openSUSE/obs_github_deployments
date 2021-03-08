@@ -1,0 +1,321 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 06 Mar 2021 18:19:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"f8c77bdcba89716d2053d320adce92b0ff0b06169985d861eab03875e4438304"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4885'
+      X-Ratelimit-Reset:
+      - '1615055065'
+      X-Ratelimit-Used:
+      - '115'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - 79C9:9051:39CEE6D:3ADF031:6043C7AF
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647","id":333224647,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjQ2NDc=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:19:11Z","updated_at":"2021-03-06T18:19:12Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224180","id":333224180,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjQxODA=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:17:24Z","updated_at":"2021-03-06T18:19:02Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224180/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333222119","id":333222119,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjIxMTk=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:09:00Z","updated_at":"2021-03-06T18:16:08Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333222119/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213895","id":333213895,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMTM4OTU=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T17:35:55Z","updated_at":"2021-03-06T18:06:22Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213895/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"friday\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213673","id":333213673,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMTM2NzM=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T17:35:03Z","updated_at":"2021-03-06T17:35:32Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213673/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"fridat\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332733498","id":332733498,"node_id":"MDEwOkRlcGxveW1lbnQzMzI3MzM0OTg=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-05T11:44:45Z","updated_at":"2021-03-05T13:13:25Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332733498/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"friday\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332730424","id":332730424,"node_id":"MDEwOkRlcGxveW1lbnQzMzI3MzA0MjQ=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-05T11:34:59Z","updated_at":"2021-03-05T11:44:42Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332730424/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"friday\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332659991","id":332659991,"node_id":"MDEwOkRlcGxveW1lbnQzMzI2NTk5OTE=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-05T08:05:06Z","updated_at":"2021-03-05T11:32:39Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332659991/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"Because reaons\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332232159","id":332232159,"node_id":"MDEwOkRlcGxveW1lbnQzMzIyMzIxNTk=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-04T10:42:51Z","updated_at":"2021-03-04T12:09:24Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332232159/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"Because why not?\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/331903772","id":331903772,"node_id":"MDEwOkRlcGxveW1lbnQzMzE5MDM3NzI=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-03T17:11:26Z","updated_at":"2021-03-04T10:03:39Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/331903772/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"Because reasons\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329719856","id":329719856,"node_id":"MDEwOkRlcGxveW1lbnQzMjk3MTk4NTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-26T12:24:50Z","updated_at":"2021-03-03T15:29:44Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329719856/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","payload":"{\"reason\":
+        \"Because why not\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329242224","id":329242224,"node_id":"MDEwOkRlcGxveW1lbnQzMjkyNDIyMjQ=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-25T11:43:24Z","updated_at":"2021-02-26T12:24:17Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329242224/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616","id":328851616,"node_id":"MDEwOkRlcGxveW1lbnQzMjg4NTE2MTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-24T15:21:40Z","updated_at":"2021-02-25T11:40:27Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null}]'
+  recorded_at: Sat, 06 Mar 2021 18:19:49 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 06 Mar 2021 18:19:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"f8c77bdcba89716d2053d320adce92b0ff0b06169985d861eab03875e4438304"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4884'
+      X-Ratelimit-Reset:
+      - '1615055065'
+      X-Ratelimit-Used:
+      - '116'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - 79CB:096F:46DED9E:4807013:6043C7AF
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647","id":333224647,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjQ2NDc=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:19:11Z","updated_at":"2021-03-06T18:19:12Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224180","id":333224180,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjQxODA=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:17:24Z","updated_at":"2021-03-06T18:19:02Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224180/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333222119","id":333222119,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjIxMTk=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:09:00Z","updated_at":"2021-03-06T18:16:08Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333222119/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213895","id":333213895,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMTM4OTU=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T17:35:55Z","updated_at":"2021-03-06T18:06:22Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213895/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"friday\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213673","id":333213673,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMTM2NzM=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T17:35:03Z","updated_at":"2021-03-06T17:35:32Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333213673/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"fridat\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332733498","id":332733498,"node_id":"MDEwOkRlcGxveW1lbnQzMzI3MzM0OTg=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-05T11:44:45Z","updated_at":"2021-03-05T13:13:25Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332733498/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"friday\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332730424","id":332730424,"node_id":"MDEwOkRlcGxveW1lbnQzMzI3MzA0MjQ=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-05T11:34:59Z","updated_at":"2021-03-05T11:44:42Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332730424/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"friday\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332659991","id":332659991,"node_id":"MDEwOkRlcGxveW1lbnQzMzI2NTk5OTE=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-05T08:05:06Z","updated_at":"2021-03-05T11:32:39Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332659991/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"Because reaons\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332232159","id":332232159,"node_id":"MDEwOkRlcGxveW1lbnQzMzIyMzIxNTk=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-04T10:42:51Z","updated_at":"2021-03-04T12:09:24Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/332232159/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"Because why not?\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/331903772","id":331903772,"node_id":"MDEwOkRlcGxveW1lbnQzMzE5MDM3NzI=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-03T17:11:26Z","updated_at":"2021-03-04T10:03:39Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/331903772/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":"{\"reason\":
+        \"Because reasons\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329719856","id":329719856,"node_id":"MDEwOkRlcGxveW1lbnQzMjk3MTk4NTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-26T12:24:50Z","updated_at":"2021-03-03T15:29:44Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329719856/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","payload":"{\"reason\":
+        \"Because why not\"}","performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329242224","id":329242224,"node_id":"MDEwOkRlcGxveW1lbnQzMjkyNDIyMjQ=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-25T11:43:24Z","updated_at":"2021-02-26T12:24:17Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/329242224/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null},{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616","id":328851616,"node_id":"MDEwOkRlcGxveW1lbnQzMjg4NTE2MTY=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-02-24T15:21:40Z","updated_at":"2021-02-25T11:40:27Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/328851616/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null}]'
+  recorded_at: Sat, 06 Mar 2021 18:19:49 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 06 Mar 2021 18:19:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"1d4b6a456885163b6628b138a37cb426050b6916a1c96f0906b0a165d45dc372"
+      Last-Modified:
+      - Sat, 06 Mar 2021 18:19:12 GMT
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4883'
+      X-Ratelimit-Reset:
+      - '1615055065'
+      X-Ratelimit-Used:
+      - '117'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - 79CD:10F8A:1D8DC2C:21101E3:6043C7AF
+    body:
+      encoding: ASCII-8BIT
+      string: '{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647","id":333224647,"node_id":"MDEwOkRlcGxveW1lbnQzMzMyMjQ2NDc=","task":"deploy","original_environment":"production","environment":"production","description":null,"created_at":"2021-03-06T18:19:11Z","updated_at":"2021-03-06T18:19:12Z","statuses_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647/statuses","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"sha":"9d81c13c9557e89a7b24d8426b9f1979e4fad726","ref":"main","payload":{},"performed_via_github_app":null}'
+  recorded_at: Sat, 06 Mar 2021 18:19:50 GMT
+- request:
+    method: get
+    uri: https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647/statuses
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/vnd.github.v3+json
+      User-Agent:
+      - Octokit Ruby Gem 4.20.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <GITHUB_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Sat, 06 Mar 2021 18:19:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding, Accept, X-Requested-With
+      Etag:
+      - W/"36545ba3c490937af4b85ab392eb1ce45388d66c41132a396f62a5d54050c550"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - repo, repo_deployment
+      X-Github-Media-Type:
+      - github.v3; format=json
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4882'
+      X-Ratelimit-Reset:
+      - '1615055065'
+      X-Ratelimit-Used:
+      - '118'
+      Access-Control-Expose-Headers:
+      - ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining,
+        X-RateLimit-Used, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes,
+        X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Frame-Options:
+      - deny
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Referrer-Policy:
+      - origin-when-cross-origin, strict-origin-when-cross-origin
+      Content-Security-Policy:
+      - default-src 'none'
+      X-Github-Request-Id:
+      - 79D0:10FE:2B0EDBB:2C102DD:6043C7B0
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647/statuses/492989627","id":492989627,"node_id":"MDE2OkRlcGxveW1lbnRTdGF0dXM0OTI5ODk2Mjc=","state":"queued","creator":{"login":"danidoni","id":2650,"node_id":"MDQ6VXNlcjI2NTA=","avatar_url":"https://avatars.githubusercontent.com/u/2650?v=4","gravatar_id":"","url":"https://api.github.com/users/danidoni","html_url":"https://github.com/danidoni","followers_url":"https://api.github.com/users/danidoni/followers","following_url":"https://api.github.com/users/danidoni/following{/other_user}","gists_url":"https://api.github.com/users/danidoni/gists{/gist_id}","starred_url":"https://api.github.com/users/danidoni/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/danidoni/subscriptions","organizations_url":"https://api.github.com/users/danidoni/orgs","repos_url":"https://api.github.com/users/danidoni/repos","events_url":"https://api.github.com/users/danidoni/events{/privacy}","received_events_url":"https://api.github.com/users/danidoni/received_events","type":"User","site_admin":false},"description":"friday","environment":"production","target_url":"","created_at":"2021-03-06T18:19:12Z","updated_at":"2021-03-06T18:19:12Z","deployment_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>/deployments/333224647","repository_url":"https://api.github.com/repos/<GITHUB_REPOSITORY>","performed_via_github_app":null}]'
+  recorded_at: Sat, 06 Mar 2021 18:19:50 GMT
+recorded_with: VCR 6.0.0
