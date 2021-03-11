@@ -13,7 +13,7 @@ module ObsGithubDeployments
     def status
       # Nothing stops us to deploy for the first time, so not having deployments means unlocked.
       local_status = latest_status
-      return false unless local_status
+      return DeploymentStatus.none unless local_status
 
       DeploymentStatus.new(local_status)
       # TODO: handle the possible exceptions properly
