@@ -9,6 +9,8 @@ module ObsGithubDeployments
       register "version", Version, aliases: ["v", "-v", "--version"]
       register "lock", Lock, aliases: ["l", "-l", "--lock"]
       register "unlock", Unlock, aliases: ["u", "-u", "--unlock"]
+      register "fail", Fail, aliases: ["f", "-f", "--fail"]
+      register "succeed", Succeed, aliases: ["s", "-s", "--succeed"]
     end
   end
 end
