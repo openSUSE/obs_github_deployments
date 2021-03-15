@@ -22,18 +22,6 @@ module ObsGithubDeployments
 
           puts(status_response(status: "ok", reason: options[:reason]))
         end
-
-        private
-
-        def check_options(options:)
-          unless %i[
-            repository ref token
-          ].all? do |key|
-                   options[key].present?
-                 end
-            raise_error("You need to provide the respository name, branch and token")
-          end
-        end
       end
     end
   end
