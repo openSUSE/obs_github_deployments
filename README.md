@@ -87,7 +87,18 @@ ogd check-lock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
 => {"status":"locked","reason":"Some reason"}  # Output of check-lock when the deployments are locked
 
 => {"status":"unlocked","reason":""}  # Output of check-lock when the deployments are unlocked
+```
 
+After a deployment, you can mark it as success or failure, using the commands:
+
+
+```bash
+ogd succeed --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN --reason "Everything is up and running"
+```
+and
+
+```bash
+ogd fail --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN --reason "There were some issues"
 ```
 
 ## Development

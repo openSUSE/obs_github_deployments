@@ -19,6 +19,14 @@ module ObsGithubDeployments
       # TODO: handle the possible exceptions properly
     end
 
+    def fail(reason:)
+      create_and_set_state(state: "failure", reason: reason)
+    end
+
+    def succeed(reason:)
+      create_and_set_state(state: "success", reason: reason)
+    end
+
     def lock(reason:)
       raise ObsGithubDeployments::Deployment::NoReasonGivenError if reason.blank?
       raise ObsGithubDeployments::Deployment::ReasonTooLong if reason.length > 140
