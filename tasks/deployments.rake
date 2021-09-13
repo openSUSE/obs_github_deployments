@@ -20,23 +20,19 @@ namespace :deployments do
 
   desc "Change the state of a specific deployment"
   task :change_state, [:state] => [:config] do |_, args|
-    begin
-      deployment_state = args.with_defaults(state: DEFAULT_STATE)
-      options = { accept: "application/vnd.github.flash-preview+json" }
-      deployment = @client.deployments(@repo_name).first
-      puts @client.create_deployment_status(deployment.url, deployment_state[:state], options).state
-    rescue Octokit::InvalidRepository
-      puts "ERROR: No repository name specified. Please set the GITHUB_TEST_REPOSITORY environment variable."
-    end
+    deployment_state = args.with_defaults(state: DEFAULT_STATE)
+    options = { accept: "application/vnd.github.flash-preview+json" }
+    deployment = @client.deployments(@repo_name).first
+    puts @client.create_deployment_status(deployment.url, deployment_state[:state], options).state
+  rescue Octokit::InvalidRepository
+    puts "ERROR: No repository name specified. Please set the GITHUB_TEST_REPOSITORY environment variable."
   end
 
   desc "Checks the state of a specific deployment"
   task check_state: :config do
-    begin
-      deployment = @client.deployments(@repo_name).first
-      puts @client.deployment_statuses(deployment.url).first.state
-    rescue Octokit::InvalidRepository
-      puts "ERROR: No repository name specified. Please set the GITHUB_TEST_REPOSITORY environment variable."
-    end
+    deployment = @client.deployments(@repo_name).first
+    puts @client.deployment_statuses(deployment.url).first.state
+  rescue Octokit::InvalidRepository
+    puts "ERROR: No repository name specified. Please set the GITHUB_TEST_REPOSITORY environment variable."
   end
 end
