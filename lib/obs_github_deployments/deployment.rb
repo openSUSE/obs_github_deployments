@@ -72,7 +72,10 @@ module ObsGithubDeployments
     end
 
     def create
-      options = { auto_merge: false }
+      # auto_merge: Do not merge the default branch into the requested deployment branch if necessary
+      # required_contexts: Do not verify if CI status checks passed on the master branch.  This allows us to create a
+      #                    deployment, even if somehow codecov failed or we have a flickering spec.
+      options = { auto_merge: false, required_contexts: [] }
 
       @client.create_deployment(@repository, @ref, options)
     end
