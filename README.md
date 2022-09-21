@@ -2,103 +2,109 @@
 
 [![openSUSE](https://circleci.com/gh/openSUSE/obs_github_deployments.svg?style=svg)](https://app.circleci.com/pipelines/github/openSUSE/obs_github_deployments)
 
-CLI tool and wrapper to interact with GitHub deployments, used by the Ansible setup for the deployments of the [Open Build Service](https://openbuildservice.org) reference instance.
+CLI tool and wrapper to interact with GitHub deployments
 
 With ObsGithubDeploymnets you can:
-- Get information about the last deployments (history).
-- Get the status of the last deployment.
-- Lock a deployment.
-- Unlock a deployment.
+
+- Get information about the deployments (history)
+- Create GitHub Deployments
+- Lock/Unlock a GitHub deployment
+
+![Screenshot of github deployments](https://raw.githubusercontent.com/openSUSE/obs_github_deployments/main/screenshot.png)
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'obs_github_deployments'
+gem 'obs_github_deployments', github: 'openSUSE/obs_github_deployments'
 ```
 
-And then execute:
+And then install your bundle
 
-    $ bundle install
-
-Or install it yourself as:
-
-    $ gem install obs_github_deployments
-
-## Usage
-
-Require the gem whenever you need it:
-
-```ruby
-    require 'obs_github_deployments'
+```
+bundle install
 ```
 
-Most of the commands require the credentials to access the GitHub repository where you are going to track the deployments.
+The gem brings an executeable called `ogd`.
+
+## Configuration
+
+Most of the `odg` commands require the credentials to access the GitHub repository where you are going to track the deployments.
 You can obtain the token in GitHub: `Settings > Developer Settings > Personal access tokens`.
 It is enough to enable `repo:status` and `repo_deployment` scopes.
 
 You can pass them using the corresponding options/flags as we do in this example:
 
 ```bash
-ogd unlock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
+ogd somecommand --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
 ```
 
-But you could also set them as environment variables in the `.env` file taking `.env.example` as an example. Doing so you don't need to specify them in the command:
+But you could also set them as environment variables in the `.env` file taking `.env.example` as an example.
+
+## Usage
+
+Print help
 
 ```bash
-ogd unlock
+$ ogd help
 ```
 
-To know the version of this gem:
+Print version
 
 ```bash
-ogd -v
+$ ogd version
 ```
 
-You might need to prevent someone to deploy in some conditions: when there is a problem in the reference server, when you need to wait until the maintenace window, to avoid two deployments at the same time, etc.
+List the deployment history
+
+```bash
+$ ogd list
+```
+
+### Create Deployments
+
+Create a successful deployment. `ref` is a [git reference](https://git-scm.com/book/en/v2/Git-Internals-Git-References)
+like a SHA-1 of a commit, branch, tag etc.
+
+```bash
+$ ogd succeed --ref 1a410efbd13591db07496601ebc7a059dd55cfe9 --reason "Everything is up and running"
+=> {"status":"ok","reason":"Everything is up and running"}
+```
+
+Create a failed deployment on github.
+```bash
+$ ogd fail --ref 1a410efbd13591db07496601ebc7a059dd55cfe9 --reason "There were some issues"
+=> {"status":"ok","reason":"There were some issues"}
+```
+
+### Deployment Locks
+
+You might need to prevent someone to deploy in some conditions: when there is a
+problem in the reference server, when you need to wait until the maintenace
+window, to avoid two deployments at the same time, etc.
+
 You can lock deployments with:
 
 ```bash
-ogd lock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN --reason "Trust me, I have a good reason."
+$ ogd lock --reason "Trust me, I have a good reason."
+=> {"status":"ok","reason":"Trust me, I have a good reason."}
 ```
 
 You can unlock a locked deployment at any time with:
 
 ```bash
-ogd unlock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
+$ ogd unlock
+=> {"status":"ok"} # OR in case of a failed unlock
+=> {"status":"error","reason":"Current deployment is not locked, nothing to do here"}
 ```
 
-You can always check whether the deployments are locked or not using:
+In your deployment scripts you can check whether the deployments are locked with
 
 ```bash
-ogd check-lock --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN
-```
-
-    The commands return a json-formatted outputs that can look like the following examples:
-
-```ruby
-=> {"status":"ok","reason":"Some reason"} # Output of a successful lock
-
-=> {"status":"ok","reason":""} # Output of a successful unlock
-
-=> {"status":"error","reason":"Current deployment is not locked, nothing to do here"} # Output of a failed unlock
-
-=> {"status":"locked","reason":"Some reason"}  # Output of check-lock when the deployments are locked
-
-=> {"status":"unlocked","reason":""}  # Output of check-lock when the deployments are unlocked
-```
-
-After a deployment, you can mark it as success or failure, using the commands:
-
-
-```bash
-ogd succeed --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN --reason "Everything is up and running"
-```
-and
-
-```bash
-ogd fail --repository $GITHUB_REPOSITORY --token $GITHUB_TOKEN --reason "There were some issues"
+$ ogd check-lock
+=> {"status":"unlocked","reason":""} # OR in the case of a locked deployment...
+=> {"status":"locked","reason":"Some reason"}
 ```
 
 ## Development
