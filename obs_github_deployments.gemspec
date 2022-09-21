@@ -30,6 +30,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Abin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "actionview"
   spec.add_dependency "activesupport"
   spec.add_dependency "dry-cli", ">= 0.6", "< 2.0"
   spec.add_dependency "octokit", ">= 4.22", "< 10.0"
