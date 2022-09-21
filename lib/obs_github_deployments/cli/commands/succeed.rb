@@ -4,12 +4,12 @@ module ObsGithubDeployments
   module CLI
     module Commands
       class Succeed < ObsCommand
-        desc "Lock deployments for a specific GitHub repository"
+        desc "Create a succesful deployment"
 
         option :repository, default: ENV["GITHUB_REPOSITORY"],
                             desc: "GitHub repository name where deployments should get locked"
         option :ref, default: ENV["GITHUB_BRANCH"],
-                     desc: "GitHub branch name the locked deployment is referring to"
+                     desc: "Git ref (branch, tag, SHA1 etc.) that was deployed succesfully"
         option :token, default: ENV["GITHUB_TOKEN"],
                        desc: "GitHub authentication token used to authenticate against the API"
         option :reason, required: true, desc: "Why deployment succeed?", default: "obs deployed successfully"

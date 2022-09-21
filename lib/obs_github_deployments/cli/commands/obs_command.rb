@@ -4,12 +4,10 @@ module ObsGithubDeployments
   module CLI
     module Commands
       class ObsCommand < Dry::CLI::Command
-        DEFAULT_ERROR = "You need to provide the respository name, branch and token"
-
         private
 
         def check_options(options:)
-          raise_error(DEFAULT_ERROR) unless (options.keys - required_keys).empty?
+          raise_error("You need to provide the #{required_keys.join(", ")} options") unless (required_keys - options.keys).empty?
         end
 
         def required_keys
