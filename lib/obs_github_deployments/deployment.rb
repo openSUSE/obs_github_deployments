@@ -43,6 +43,8 @@ module ObsGithubDeployments
       raise ObsGithubDeployments::Deployment::PendingError if deployment_status.blank?
       raise ObsGithubDeployments::Deployment::AlreadyLockedError if deployment_status.state == "queued"
 
+      @ref = lastest_commit # we just always use the latest ref to lock
+
       true if create_and_set_state(state: "queued", reason: reason)
     end
 
@@ -69,6 +71,10 @@ module ObsGithubDeployments
 
     def latest_status
       client.deployment_statuses(latest.url).first if latest
+    end
+
+    def lastest_commit
+      @client.commits(@repository, options = {per_page: 1})
     end
 
     def create
