@@ -4,12 +4,12 @@ module ObsGithubDeployments
   module CLI
     module Commands
       class Fail < ObsCommand
-        desc "Lock deployments for a specific GitHub repository"
+        desc "Inform GitHub Deployments that the OBS deployment failed"
 
         option :repository, default: ENV["GITHUB_REPOSITORY"],
-                            desc: "GitHub repository name where deployments should get locked"
+                            desc: "GitHub repository name where deployments are tracked"
         option :ref, default: ENV["GITHUB_BRANCH"],
-                     desc: "GitHub branch name the locked deployment is referring to"
+                     desc: "GitHub branch name the deployment is referring to"
         option :token, default: ENV["GITHUB_TOKEN"],
                        desc: "GitHub authentication token used to authenticate against the API"
         option :reason, required: true, desc: "Why deployment failed?", default: "obs deployment failed"
