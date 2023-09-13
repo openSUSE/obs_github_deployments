@@ -6,7 +6,8 @@ loader.inflector.inflect("cli" => "CLI")
 loader.setup
 
 require "octokit"
-require "active_support/core_ext/object/blank"
+require "active_support" # For file caching and .blank?
+require "action_view" # For ActionView::Helpers::DateHelper
 
 module ObsGithubDeployments
   class Error < StandardError; end

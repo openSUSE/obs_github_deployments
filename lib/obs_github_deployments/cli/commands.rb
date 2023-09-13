@@ -11,6 +11,7 @@ module ObsGithubDeployments
       register "unlock", Unlock, aliases: ["u", "-u", "--unlock"]
       register "fail", Fail, aliases: ["f", "-f", "--fail"]
       register "succeed", Succeed, aliases: ["s", "-s", "--succeed"]
+      register "list", List, aliases: ["li", "--list"]
     end
   end
 end
