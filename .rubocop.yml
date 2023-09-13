@@ -8,6 +8,9 @@ AllCops:
   TargetRubyVersion: 2.5
   NewCops: enable
 
+Gemspec/DevelopmentDependencies:
+  EnforcedStyle: gemspec
+
 Metrics/BlockLength:
   Exclude:
     - 'tasks/*'
