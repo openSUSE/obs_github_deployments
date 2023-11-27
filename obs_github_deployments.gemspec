@@ -30,17 +30,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{\Abin/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "pry-byebug", "~> 3"
-  spec.add_development_dependency "rake", "~> 13.0"
-  spec.add_development_dependency "rspec", "~> 3.0"
-  spec.add_development_dependency "rubocop", "~> 1.7"
-  spec.add_development_dependency "rubocop-rake", "~> 0.5"
-  spec.add_development_dependency "rubocop-rspec", "~> 2.2"
-  spec.add_development_dependency "vcr", "~> 6.0"
-  spec.add_development_dependency "webmock", "~> 3"
   spec.add_dependency "activesupport"
   spec.add_dependency "dry-cli", ">= 0.6", "< 2.0"
-  spec.add_dependency "octokit", ">= 4.22", "< 7.0"
+  spec.add_dependency "octokit", ">= 4.22", "< 8.0"
   spec.add_dependency "zeitwerk", "~> 2.4"
 
   # For more information and examples about making a new gem, checkout our
