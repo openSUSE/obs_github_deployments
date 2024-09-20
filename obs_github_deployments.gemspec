@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "activesupport"
   spec.add_dependency "dry-cli", ">= 0.6", "< 2.0"
-  spec.add_dependency "octokit", ">= 4.22", "< 9.0"
+  spec.add_dependency "octokit", ">= 4.22", "< 10.0"
   spec.add_dependency "zeitwerk", "~> 2.4"
 
   # For more information and examples about making a new gem, checkout our
