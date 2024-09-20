@@ -151,4 +151,4 @@ and `VCR` will record a new one for you on the next execution of the test case.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/openSUSE/obs_github_deployments.
+Send bug reports and pull requests to https://github.com/openSUSE/obs_github_deployments.
