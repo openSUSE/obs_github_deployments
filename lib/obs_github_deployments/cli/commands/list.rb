@@ -6,9 +6,9 @@ module ObsGithubDeployments
       class List < ObsCommand
         desc "List deployments for a GitHub repository"
 
-        option :repository, default: ENV["GITHUB_REPOSITORY"],
+        option :repository, default: ENV.fetch("GITHUB_REPOSITORY", nil),
                             desc: "GitHub repository name where deployments should get locked"
-        option :token, default: ENV["GITHUB_TOKEN"],
+        option :token, default: ENV.fetch("GITHUB_TOKEN", nil),
                        desc: "GitHub authentication token used to authenticate against the API"
 
         def call(**options)

@@ -1,15 +1,16 @@
 # frozen_string_literal: true
-include ActionView::Helpers::DateHelper
 
 module ObsGithubDeployments
   class Deployment
+    include ActionView::Helpers::DateHelper
+
     attr_reader :client
 
     def initialize(repository:, access_token:, ref: "main")
       @client = Octokit::Client.new(access_token: access_token)
       @repository = repository
       @ref = ref
-      @file_cache = ActiveSupport::Cache::FileStore.new(File.join(File.dirname(__FILE__), '..', '..', 'tmp', 'cache'))
+      @file_cache = ActiveSupport::Cache::FileStore.new(File.join(File.dirname(__FILE__), "..", "..", "tmp", "cache"))
     end
 
     def list
@@ -24,7 +25,9 @@ module ObsGithubDeployments
         size ||= @file_cache.fetch(deployment[:sha]) do
           total_commits(base: @previous[:commit], head: deployment[:sha])
         end
-        puts "At #{deployment[:created_at].strftime("%A")} #{deployment[:created_at]} after #{distance_of_time_in_words(deployment[:created_at], @previous[:created_at])} #{deployment[:creator][:login]} deployed #{size} commits to #{deployment[:environment]}"
+        puts "At #{deployment[:created_at].strftime("%A")} #{deployment[:created_at]} after #{distance_of_time_in_words(
+          deployment[:created_at], @previous[:created_at]
+        )} #{deployment[:creator][:login]} deployed #{size} commits to #{deployment[:environment]}"
         @previous[:commit] = deployment[:sha]
         @previous[:created_at] = deployment[:created_at]
       end
