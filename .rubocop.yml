@@ -4,6 +4,9 @@ require:
   - rubocop-rake
   - rubocop-rspec
 
+plugins:
+  - rubocop-capybara
+
 AllCops:
   TargetRubyVersion: 2.5
   NewCops: enable
